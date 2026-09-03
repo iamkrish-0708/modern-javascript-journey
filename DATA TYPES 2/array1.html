@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+
+        // let arr=new Array(); {syntax option1}
+        //{syntax option2}- mostly used one`
+        let arr=["india","australia","new zealand"];
+        arr.shift(); // removes india from array
+        alert(arr.at(0));
+        arr.unshift("india","south africa"); // adds india and south africa at beginning of array
+        alert(arr.at(0));
+        alert(arr.at(1));
+        alert(arr.pop()); // removes last element from array and return it
+        arr.push("china"); // adds china at the end of array 
+        alert(arr.at(-1)); // -1 is used to point at last element
+        arr[2]="vietnam"; // replaces element at 2 
+
+        //print all array elements syntax 1
+        for(let i=0;i<arr.length;i++){
+            alert(arr[i]);
+        }
+
+        /*
+        syntax 2 
+        for(let elements of arr){
+            alert(elements);
+        }
+        */
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST PARAMETER & SPREAD OPERATOR</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        const defaultSettings = {
+  theme: "light",
+  language: "en",
+  showNotifications: true
+};
+
+const userCustomPreferences = {
+  language: "hi", // Hindi
+  fontSize: "16px"
+};
+
+const cartA = ["Milk", "Eggs"];
+const cartB = ["Bread", "Butter"];
+
+// REST PARAMETER IN ACTION (GATHER'S ALL INDIVIDUAL SCORES)
+function logScores(studentName,...scores){
+    let maxScore=Math.max(...scores);
+    console.log(`${studentName}'s highest score is ${maxScore}`);
+}
+logScores("Alex", 78, 92, 85, 99, 88);
+
+// SPREAD OPERATOR IN ACTION (UNPACK ALL ELEMENTS FROM PREVIOUS BOX INTO NEW BOX)
+const combinedCart=["Coffee",...cartA,...cartB,"Apples"];
+console.log(combinedCart);
+
+const finalSettings={
+    ...defaultSettings,
+    ...userCustomPreferences,
+    theme:"dark"
+}
+
+const { language: lang, ...otherSettings } = finalSettings;
+console.log(lang);
+console.log(otherSettings);
+
+
+    </script>
+</body>
+</html>

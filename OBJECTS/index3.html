@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map and filter</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        const cart = [
+  { id: 101, title: "Wireless Mouse", price: 25, inStock: true },
+  { id: 102, title: "Mechanical Keyboard", price: 80, inStock: false },
+  { id: 103, title: "USB-C Hub", price: 45, inStock: true },
+  { id: 104, title: "Monitor Stand", price: 30, inStock: true },
+  { id: 105, title: "Webcam HD", price: 95, inStock: false }
+];
+
+// Task 1.A: Just filter available products (returns an array of objects)
+const availableProducts = cart.filter(item => item.inStock); 
+// Note: `item.inStock` is already boolean, no need for `=== true`
+
+console.log(availableProducts);
+/* Output:
+[
+  { id: 101, title: "Wireless Mouse", price: 25, inStock: true },
+  { id: 103, title: "USB-C Hub", price: 45, inStock: true },
+  { id: 104, title: "Monitor Stand", price: 30, inStock: true }
+]
+*/
+
+// Task 1.B: Filter + Map with discount & formatted string
+const discountedPriceList = cart
+  .filter(item => item.inStock)
+  .map(item => `${item.title} - $${item.price * 0.9}`);
+
+console.log(discountedPriceList);
+/* Output:
+[
+  "Wireless Mouse - $22.5",
+  "USB-C Hub - $40.5",
+  "Monitor Stand - $27"
+]
+*/
+
+    </script>
+</body>
+</html>

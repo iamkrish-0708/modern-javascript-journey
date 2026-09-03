@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach and reduce</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        const transactions = [
+  { id: 1, type: "deposit", amount: 500 },
+  { id: 2, type: "withdrawal", amount: 150 },
+  { id: 3, type: "deposit", amount: 200 },
+  { id: 4, type: "withdrawal", amount: 50 },
+  { id: 5, type: "deposit", amount: 1000 }
+];
+
+transactions.forEach(t => {
+    console.log(`Transaction #${t.id}: ${t.type} of $${t.amount}`);
+});
+
+const total=transactions.reduce((total,t) =>{
+    if(t.type==="deposit"){
+        return total + t.amount;
+    }
+    else if(t.type==="withdrawal"){
+        return total - t.amount;
+    }
+},0 );
+
+console.log(total);
+    </script>
+</body>
+</html>

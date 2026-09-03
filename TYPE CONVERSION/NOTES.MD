@@ -1,0 +1,26 @@
+TYPE CONVERSION IS USED TO CONVERT A DATA FROM ONE TYPE TO ANOTHER 
+
+HERE WE SAW THREE TYPE CONVERSION TO NUMBER , TO STRING AND TO BOOLEAN
+
+1. TO NUMBER
+OCCURS IN MATH OPERATIONS
+WE CAN CONVERT DATA INTO NUMBER USING Number(variable)
+*
+undefined gives NaN 
+null gives 0
+true/false give 1/0
+empty string gives 0 and in non empty string cases if fails to read a character throws NaN ex-"153x"
+*
+
+2. TO STRING
+OCCURS WHEN WE OUTPUT SOMETHING 
+CAN BE PERFORMED USING String(value)
+alert() FUNCTION BY DEFAULT CONVERTS TO STRING FOR SHOWING AN OUTPUT
+
+3. TO BOOLEAN
+OCCURS IN LOGICAL OPERATION
+CAN BE PERFORMED WITH Boolean(value)
+*
+NaN,null,undefined,0,"" gives 0
+rest anything gives 1
+*

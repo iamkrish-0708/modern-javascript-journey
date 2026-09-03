@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON METHODS</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        // 1. Data created in your React frontend
+const newBlogPost = {
+  title: "Mastering Modern JavaScript",
+  author: "Krish",
+  tags: ["javascript", "es6", "webdev"],
+  views: 0,
+  isPublished: false
+};
+
+// 2. Raw JSON string sent back from the server API
+const apiResponseString = '{"success":true,"postID":8092,"message":"Post created successfully"}';
+
+// 3. A corrupted JSON string
+const malformedApiString = '{"success": true, "postID": 8092, message: missing_quotes}';
+
+const jsonConverter=JSON.stringify(newBlogPost,null,2);
+console.log(typeof jsonConverter);
+console.log(jsonConverter);
+
+try{
+    const jsonParse1=JSON.parse(apiResponseString);
+    const {postID:id,message:msg}=jsonParse1;
+    console.log(`Server replied with ID: ${id} - ${msg}`);
+}catch(error){
+    console.error("Failed to parse JSON safely:", error.message);
+}
+
+try{
+    const jsonParse2=JSON.parse(malformedApiString);
+}catch(error){
+    console.error("API Error: Failed to parse server response");
+}
+    </script>
+</body>
+</html>

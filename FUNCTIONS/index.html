@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+        "use strict"
+
+        let userName=prompt("Hey User Enter You'r Name","Sam Altman");
+        function greetUser(userName="Undefined User Name"){
+            alert(`Hello, ${userName}.`)
+        }
+        greetUser(userName);
+
+        let num1=prompt("Enter first number","21");
+        let num2=prompt("Enter second number","24");
+        num1=Number(num1);
+        num2=Number(num2);
+        let operation=prompt("What operation would you like to perform?","/ or * or + or -");
+        function add(num1,num2){
+            return num1+num2;
+        }
+        function subtract(num1,num2){
+            return num1-num2;
+        }
+        function multiply(num1,num2){
+            return num1*num2;
+        }
+        function division(num1,num2){
+            return num1/num2;
+        }
+        function operationEvaluator(operation,num1,num2){
+            if(operation=="/"){
+                return division(num1,num2);
+            }
+            else if(operation=="*"){
+                return multiply(num1,num2);
+            }
+            else if(operation=="+"){
+                return add(num1,num2);
+            }
+            else if(operation=="-"){
+                return subtract(num1,num2);
+            }
+            else{
+                return ("Invalid operation or operation out of bound !");
+            }
+        }
+        function result(output){
+            alert(`Operation result (${num1},${num2})= ${output}.`);
+            return;
+        }
+
+        let output=operationEvaluator(operation,num1,num2);
+        result(output);
+
+    </script>
+</body>
+</html>

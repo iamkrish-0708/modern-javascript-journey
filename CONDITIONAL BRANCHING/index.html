@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Branching</title>
+</head>
+<body>
+    <script>
+        "use script"
+        let name=prompt("WHAT IS YOU'R NAME?","");
+        if(name){
+            alert(`HELLO!${name}`);
+        }
+        else{
+            alert("DON'T YOU HAVE NAME FOR YOURSELF!");
+        }
+
+        let age=prompt("HOW OLD ARE YOU?","");
+        alert((age>18)? "YOU ARE ELIGIBLE TO VOTE":"KID'S CAN'T VOTE");
+
+        let salaryExpectation=prompt("WHAT IS YOU'R DREAM SALARY","");
+
+        alert((salaryExpectation<1500)?"HUH! YOU SHOULD BE MORE OPTIMISTIC":(salaryExpectation<50000)?"HMMMM.. THAT'S SOUNDS REALISTIC!":(salaryExpectation>50000)?"AAHH! IT IS GOOD THAT YOU HAVE BIG DREAMS!":"");
+        
+        
+    </script>
+</body>
+</html>

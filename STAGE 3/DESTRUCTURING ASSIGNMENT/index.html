@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring assigment</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        const request = {
+  headers: {
+    authorization: "Bearer token_xyz123",
+    contentType: "application/json"
+  },
+  body: {
+    productName: "Mechanical Keyboard",
+    price: 99,
+    tags: ["electronics", "peripherals", "sale"]
+  }
+};
+
+const {productName:title,price,currency="USD"}=request.body;
+console.log(title,price,currency);
+
+const {headers:{authorization}}=request;
+console.log(authorization);
+
+const [primaryTag,,promoTag]=request.body.tags;
+console.log(primaryTag,promoTag);
+
+    </script>
+</body>
+</html>

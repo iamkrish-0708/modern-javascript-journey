@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boss Task</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        // Raw payload received from client
+const rawClientRequest = JSON.stringify({
+  orderId: "ORD-9821",
+  customer: {
+    name: "Aarav Gupta",
+    email: "aarav@example.com",
+    address: {
+      city: "Bengaluru",
+      pincode: 560001
+    }
+  },
+  items: ["Laptop Stand", "Wireless Mouse", "Keyboard"],
+  payment: {
+    status: "paid",
+    secretKey: "SEC_9921_DO_NOT_EXPOSE"
+  }
+});
+
+let orderData;
+try {
+    orderData = JSON.parse(rawClientRequest);
+} catch(error) {
+    console.error("Failed to parse JSON safely:", error.message);
+}    
+
+const { orderId, customer: { name, address: { city }, discountCode = "NONE" }, items } = orderData;
+console.log(orderId, name, city, discountCode);
+
+const [primaryItem, ...addonItems] = items;
+console.log(primaryItem, addonItems);
+
+// Helper function to sum any number of prices using rest parameters
+function calculateTotal(...prices) {
+    return prices.reduce((total, price) => total + price, 0);
+}
+
+// Test with prices [25, 45, 100] using spread operator
+const samplePrices = [25, 45, 100];
+const totalAmount = calculateTotal(...samplePrices);
+console.log(`Total Amount: $${totalAmount}`);
+
+// Strip out secretKey from payment using object rest destructuring
+const { secretKey, ...safePayment } = orderData.payment;
+
+const orderSummary = {
+    ...orderData,
+    payment: safePayment,
+    totalAmount
+};
+console.log(orderSummary);
+
+const jsonConvertor=JSON.stringify(orderSummary,null,2);
+console.log(jsonConvertor);
+</script>
+</body>
+</html>

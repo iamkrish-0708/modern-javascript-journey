@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boss task</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        const courseEnrollments = [
+  { id: 1, student: "Alice", course: "React Basics", price: 49, completed: true, rating: 5 },
+  { id: 2, student: "Bob", course: "Node.js API", price: 69, completed: false, rating: null },
+  { id: 3, student: "Charlie", course: "React Basics", price: 49, completed: true, rating: 4 },
+  { id: 4, student: "Diana", course: "Fullstack Masterclass", price: 120, completed: true, rating: 5 },
+  { id: 5, student: "Evan", course: "Node.js API", price: 69, completed: false, rating: null },
+  { id: 6, student: "Fiona", course: "React Basics", price: 49, completed: true, rating: 5 }
+];
+
+const courseCompletedStudents=courseEnrollments
+.filter(s => s.completed)
+.map(s => `${s.student}`);
+
+console.log(courseCompletedStudents);
+
+const total=courseEnrollments.reduce((total,s)=>{
+    return total+s.price;
+},0);
+console.log(total);
+
+const search1=courseEnrollments.find(s=> s.student==="Diana");
+console.log(search1);
+
+const check=courseEnrollments.map(s=>`${s.course}`)
+.includes("React Basics");
+console.log(check);
+
+const completedEnrollments = courseEnrollments.filter(s => s.completed);
+
+const avgRating = completedEnrollments.reduce((total, s) => total + s.rating, 0) / completedEnrollments.length;
+
+console.log(avgRating); 
+
+
+
+
+    </script>
+</body>
+</html>

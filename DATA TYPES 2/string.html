@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        let str1="Hello i am a student";
+        let str2="My name is Krish";
+
+        alert(str2.includes(str1)); // checks if str2 is equal to str1
+        alert(str2.includes("Krish")); // check if str2 has Krish in string {NOTE- IT IS CASE SENSITIVE}
+        str1=str1.toLowerCase(); // converts all char in string to small letter
+        str2=str2.toUpperCase(); // converts all char in string to captial letter
+        alert(str1);
+        alert(str2);
+
+        alert(str1.slice(13,)); // HELPS EXTRACTING A PART OF STRING VIA STARTING AND END INDEX OF PART
+
+        let str3="               Jade Thomas                   ";
+        alert(str3.trim()); // removes extra blank spaces
+    </script>
+</body>
+</html>

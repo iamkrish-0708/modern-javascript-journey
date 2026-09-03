@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find and include</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        const registeredUsers = [
+  { id: 101, username: "dev_krish", email: "krish@example.com", isBanned: false },
+  { id: 102, username: "sara_coder", email: "sara@example.com", isBanned: true },
+  { id: 103, username: "johnny_js", email: "john@example.com", isBanned: false }
+];
+
+const bannedWords = ["spam", "free_money", "click_here"];
+
+const search=registeredUsers.find(s=>s.email==="sara@example.com");
+console.log(`Username:${search.username} | isBanned:${search.isBanned}`);
+
+const new_username="free_money";
+if(bannedWords.includes(new_username)){
+    console.log("Username not allowed");
+}
+else{
+    console.log("Username approved");
+}
+    </script>
+</body>
+</html>

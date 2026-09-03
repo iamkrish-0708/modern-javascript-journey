@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        let menu=['noodles','pasta','ramen','biryani'];
+        // .splice(from,num of elements to remove,"replace") this method is used to delete array elements and also used for replacing or adding elements
+        menu.splice(-1,1,"veg biryani"); // removes biryani and instead of it adds veg biryani
+        alert(menu.at(-1));
+
+        menu.forEach((item,index,array)=>{
+            alert(`${item} is at index ${index} in ${array}`);  
+        });
+
+        /*
+        array.indexOf() tells about first appearance of element in array at which index
+        array.lastIndexOf() tells about last appearance of element in array at which index
+        if element is missing it simply reutrns -1
+        */
+        alert(menu.indexOf("pasta"));
+        alert(menu.lastIndexOf("veg biryani"));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property value shorthand</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        function makeAccount(AccNum,Balance){
+            return {AccNum,
+            Balance,
+        };
+    }
+
+    /*
+    ABOVE IS PROPERTY SHORTHAND WHEN PROPERTY HAS SAME NAME AS VARIABLE IN SUCH CASE WE CAN USE ABOVE SYNTAX INSTEAD OF BELOW
+
+    function makeAccount(AccNum,Balance){
+            return {AccNum:AccNum,
+            Balance:Balance,
+        };
+    }
+
+    */
+
+    let acc1=makeAccount(987612,2400);
+    alert(acc1.AccNum);
+    alert(acc1.Balance);
+
+    // iterate every key and value in acc1 object
+    for(let key in acc1){
+        alert(key);
+        alert(acc1[key]);
+    }
+
+    // copy acc1 in copy_acc1
+    let copy_acc1=acc1;
+    copy_acc1.Balance=2200;
+    alert(acc1.Balance);
+    // here even a copy could make changes and the changes are reflected on original object too
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECTS</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        let objectExample1={
+            name:"Jade",
+            age:32,
+            "escapes FROM village":false,
+        }
+        alert(objectExample1.name);
+        alert(objectExample1.age);
+        alert(objectExample1["escapes FROM village"]);
+
+        objectExample1['escapes FROM village']=true;
+        delete objectExample1.age;
+        alert(objectExample1['escapes FROM village']);
+        alert(objectExample1.age);
+    </script>
+</body>
+</html>
