@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        const apiUrl="https://jsonplaceholder.typicode.com/posts/1";
+
+        async function getBlogPost() {
+            try {
+                const response= await fetch(apiUrl);
+
+                if(!response.ok){
+                    throw new Error(`HTTP Error! Status: ${response.status}`);
+                }
+
+                const user=await response.json();
+
+                const {id,title,body}=user;
+                console.log(`Post #${id}:${title}`);
+                onsole.log(`Body: ${body}`);
+            } catch (error) {
+                console.error("Failed to load user:",error.message);
+            }
+        }
+        getBlogPost();
+    </script>
+</body>
+</html>

@@ -63,12 +63,12 @@
 ---
 
 ### 🌐 Stage 4: Asynchronous JavaScript (The Bridge to Backend & APIs)
-- [ ] **10. Error Handling:**
+- [x] **10. Error Handling:**
   * `try { ... } catch (error) { console.error(error.message); }`
-- [ ] **11. Promises:**
+- [x] **11. Promises:**
   * Understanding Promises: `.then(res => ...)`, `.catch(err => ...)`
   * `Promise.all([p1, p2])` ➔ Running multiple requests in parallel.
-- [ ] **12. `async / await` (The Industry Standard for Node.js):**
+- [x] **12. `async / await` (The Industry Standard for Node.js):**
   * Writing clean asynchronous code without callback hell:
   ```javascript
   const fetchData = async () => {
@@ -81,7 +81,7 @@
     }
   };
   ```
-- [ ] **13. `fetch()` API:**
+- [x] **13. `fetch()` API:**
   * Making HTTP `GET` and `POST` requests with headers and request bodies.
 
 ---

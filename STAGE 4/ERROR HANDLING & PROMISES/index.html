@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        // Simulated async services:
+const authenticateUser = (token) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (token === "valid_token_123") {
+        resolve({ userId: 501, status: "authenticated" });
+      } else {
+        reject(new Error("Authentication failed: Invalid Token"));
+      }
+    }, 500);
+  });
+};
+
+const fetchUserProfile = (userId) => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve({ id: userId, name: "Alex Hunter", theme: "dark" }), 800);
+  });
+};
+
+const fetchUserNotifications = (userId) => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(["Welcome back!", "Security alert from login"]), 800);
+  });
+};
+
+// 1. Synchronous Error Handling (try...catch...finally)
+function verifyAge(age) {
+  if (age < 18) {
+    throw new Error("Access denied: You must be at least 18 years old");
+  }
+  console.log("Access granted");
+}
+
+try {
+  verifyAge(15);
+} catch (error) {
+  console.error(error.message); // Fixed console.error (lowercase)
+} finally {
+  console.log("Operation execution finished.");
+}
+
+// 2. Asynchronous Error Handling with Promises (async/await)
+async function handleUserSession(token) {
+  try {
+    const authData = await authenticateUser(token);
+    console.log("Authenticated:", authData);
+
+    const profile = await fetchUserProfile(authData.userId);
+    console.log("User Profile:", profile);
+
+    const notifications = await fetchUserNotifications(authData.userId);
+    console.log("User Notifications:", notifications);
+  } catch (error) {
+    console.error("Async Operation Error:", error.message);
+  } finally {
+    console.log("Async session process finished.");
+  }
+}
+
+// Test async flow with valid token
+handleUserSession("valid_token_123");
+
+
+
+    </script>
+</body>
+</html>
