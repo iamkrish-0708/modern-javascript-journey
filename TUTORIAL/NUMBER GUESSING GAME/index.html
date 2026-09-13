@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="Main">
+        <h1 id="heading">NUMBER GUESSING GAME</h1>
+        <hr>
+        <div id="rules">
+            <span class="title">ABOUT GAME</span>
+            <ul>
+                <li>System generates a random number in the range (1, 100).</li>
+                <li>Try to guess the number within the least possible tries.</li>
+            </ul>
+        </div>
+        <hr>
+        <p id="alert1">
+            RANDOM NUMBER IS GENERATED. 
+        </p>
+        <input name="guess" id="guessio">
+        <button id="submit">SUBMIT ANSWER</button>
+        <hr>
+        <label id="RESULT">RESULT</label>
+        <label id="output"></label>
+        <br>
+        <button id="reset">RESET</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
