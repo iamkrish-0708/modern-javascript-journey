@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+<body>
+    <p>
+        Callback - A function passed as arguement to another function.
+
+        #Used- Handling Asynchronous Operations(Operations which takes variable amount of time) like reading a file, network request and database interaction.
+    </p>
+    <script>
+        "use strict"
+        function greetUser(callback){
+            setTimeout(function(){
+                console.log("Hello");
+                if (typeof callback === "function") callback();
+            }, 3000);
+        }
+        function conclude(){
+            console.log("GoodBye!");
+        }
+        greetUser(conclude);
+    </script>
+</body>
+</html>

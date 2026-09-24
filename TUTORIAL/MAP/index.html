@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.map()</title>
+</head>
+<body>
+    <p>
+        .map() is similar to .forEach() this also iterate over the elements one by one and performs operations on it but the only difference is that .map() returns the result of operations by storing it in a new array and return it at the end of iterations.
+    </p>
+    <script>
+        let studentName=["Shinde Vikrant","Roy Amit","Singh Sodhi"];
+
+        const formatedStudentNames=studentName.map(formatNames);
+
+        function formatNames(element){
+            const parts=element.split(" ");
+            console.log(`${parts[1]} ${parts[0]}`);
+        }
+    </script>
+</body>
+</html>

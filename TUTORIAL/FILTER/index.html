@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.filter()</title>
+</head>
+<body>
+    <p>
+        .filter() is used when we have to select a specific elements from a array and return a new array having elements which satisfies the particular condition.
+    </p>
+    <script>
+        let billAmount=[1200,22000,2000,500];
+        const gstPayableBill=billAmount.filter(gstPayableAmount);
+        console.log(gstPayableBill);
+        function gstPayableAmount(element){
+            if(element>1000){
+                return element;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR EACH</title>
+</head>
+<body>
+    <p>
+        FOR EACH - USED TO ITERATE OVER ELEMENTS ONE BY ONE AND PERFORM SOME OPERATIONS ON THEM IN ARRAY.
+    </p>
+    <script>
+        "use strict"
+        let carBrands=["Hyundai","Tata","Honda","Maruti Suzuki"];
+        function uppercase(element,index,array){
+            array[index]=element.toUpperCase();
+            console.log(array[index]);
+        }
+        carBrands.forEach(uppercase);
+    </script>
+</body>
+</html>

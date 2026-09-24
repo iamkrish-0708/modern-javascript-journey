@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.reduce()</title>
+</head>
+<body>
+    <p>
+        .reduce() is used when we have return a single value from an array of multiple values.
+
+        basic use of .reduce() could be for sum of all element, min and max element from elements,etc.
+    </p>
+    <script>
+        let bill=[100,25,50];
+        let totalBill=bill.reduce(billTotal);
+        let min=bill.reduce(minPrice);
+        let max=bill.reduce(maxPrice);
+        console.log(`Min Price Of Single Item = $ ${min}`);
+        console.log(`Max Price Of Single Item = $ ${max}`);
+        console.log(`Total= $ ${totalBill}`);
+
+        function billTotal(prevElement,nextElement){
+            return prevElement+nextElement;
+        }
+        function maxPrice(prevElement,nextElement){
+            return Math.max(prevElement,nextElement);
+        }
+        function minPrice(prevElement,nextElement){
+            return Math.min(prevElement,nextElement);
+        }
+    </script>
+</body>
+</html>
