@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revision</title>
+</head>
+<body>
+    <script>
+        class Cart{
+            constructor(item,price){
+                this.item=item;
+                this.price=price;
+            }
+            static cart(cartInstance){
+                console.log(`${cartInstance.item} for ${cartInstance.price} rs is added to cart.`);
+            }
+        }
+        const purchase1=new Cart("Toothpaste",59);
+        Cart.cart(purchase1);
+    </script>
+</body>
+</html>
