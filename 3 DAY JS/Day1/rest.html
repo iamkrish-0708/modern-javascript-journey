@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const registration = {
+  username: "krish_dev",
+  passwordHash: "secret_hash_987",
+  token: "jwt_abc123",
+  role: "Student",
+  branch: "Computer Engineering",
+  year: 2
+};
+const {passwordHash,token,...safeUserProfile}=registration;
+console.log(safeUserProfile);
+
+function calculateCartTotal(taxRate,...prices){
+    let subtotal = 0;
+    for (let price of prices) {
+        subtotal += price;
+    }
+    const total = subtotal + (subtotal * taxRate);
+    console.log(`Subtotal: $${subtotal} | Cart total (incl. tax): $${total.toFixed(2)}`);
+}
+
+calculateCartTotal(0.18,12,24,56,78);
+    </script>
+</body>
+</html>

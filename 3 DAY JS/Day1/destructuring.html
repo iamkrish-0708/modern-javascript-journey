@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+    <p>
+        Destructuring is a ES6 feature which helps to extract values from array or properties from objects and unpack them in distinct variables using clean and syntax shortening notation.
+    </p>
+    <script>
+        const githubUser = {
+  id: 9942,
+  login: "iamkrish-0708",
+  company: null,
+  stats: {
+    followers: 120,
+    publicRepos: 35
+  },
+  location: "Mumbai, India"
+};
+
+function renderUserProfile(user){
+    const {login:username,stats:{publicRepos=0}={},bio="No bio provided",company}=user;
+    console.log(`User: ${username}|Repos: ${publicRepos}|Bio: ${bio}|Company: ${company ?? "Independent"}`);
+}
+renderUserProfile(githubUser);
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+            const currentAppState = {
+  theme: "dark",
+  user: {
+    id: 1001,
+    username: "krish_dev",
+    email: "krish@example.com",
+    role: "student"
+  },
+  notifications: ["Email alerts", "SMS alerts"],
+  metrics: [9.26, 20, 34] // [cgpa, utScore, leetcodeCount]
+};
+
+function applyUpdates(state, newEmail, newNotification, newLeetcodeCount) {
+  // 1. Unpack what we need
+  const [cgpa, utScore] = state.metrics;
+  const { id, ...otherUserDetails } = state.user;
+
+  // 2. Return the new updated state
+  return {
+    ...state,
+    theme: "system",
+    user: {
+      id,
+      ...otherUserDetails,
+      email: newEmail
+    },
+    notifications: [...state.notifications, newNotification],
+    metrics: [cgpa, utScore, newLeetcodeCount]
+  };
+}
+
+// 3. Test it:
+const nextState = applyUpdates(currentAppState, "krish.swe@college.edu", "Push notifications", 40);
+
+console.log("Original State:", currentAppState);
+console.log("Updated State:", nextState);
+        </script>   
+</body>
+</html>

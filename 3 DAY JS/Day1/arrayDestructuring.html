@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const colorRGBA = [255, 165, 0]; // [red, green, blue] without alpha
+        const [red,green,blue,alpha=1]=colorRGBA;
+        console.log(`Red:${red}|Green:${green}|Blue:${blue}|Alpha:${alpha}`);
+        const podium = ["Krish", "Aarav", "Dev", "Rohan"]; // [1st, 2nd, 3rd, 4th]
+        const[first,second,,fourth]=podium;
+        console.log(`First:${first}|Second:${second}|Fourth:${fourth}}`);
+        let primaryColor = "#FFFFFF"; // Light
+        let secondaryColor = "#000000"; // Dark
+        [primaryColor, secondaryColor]=[secondaryColor,primaryColor];
+        console.log(primaryColor, secondaryColor);
+
+    </script>
+</body>
+</html>

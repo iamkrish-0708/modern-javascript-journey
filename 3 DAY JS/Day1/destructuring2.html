@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const product = {
+  id: 402,
+  title: "Mechanical Keyboard",
+  price: 79.99,
+  discount: null, // API returned null for no discount
+  details: {
+    specs: {
+      switchType: "Cherry MX Red",
+      wireless: true
+    },
+    warranty: "2 Years"
+  }
+};
+        function formatProductCard({
+  title: productName = "Unnamed Product",
+  price = 0,
+  details: { 
+    specs: { switchType = "Standard" } = {} 
+  } = {},
+  discount
+} = {}) {
+  console.log(`Product: ${productName} | Price: $${price} | Switch: ${switchType} | Discount: ${discount ?? "No discount."}`);
+}
+
+formatProductCard(product);
+formatProductCard({}); // Crash-proof!
+formatProductCard();   // Crash-proof!
+    </script>
+</body>
+</html>

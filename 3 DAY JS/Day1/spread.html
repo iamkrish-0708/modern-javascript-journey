@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const currentCart = ["Mechanical Keyboard", "Wireless Mouse", "USB-C Cable"];
+        const newCart=["Laptop stand",...currentCart,"Desk Mat"];
+        console.log(newCart);
+        const userProfile = {
+  id: 101,
+  name: "Krish",
+  cgpa: 9.26,
+  status: "Undergrad Student",
+  skills: ["Java", "JavaScript"]
+};
+const updatedProfile={
+    ...userProfile,
+    status:"Summer 2027 SWE Intern",
+    location: "Mumbai",
+    skills: [...userProfile.skills, "React"]
+};
+console.log(userProfile);
+console.log(updatedProfile);
+    </script>
+</body>
+</html>
