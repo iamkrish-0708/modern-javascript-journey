@@ -1,0 +1,51 @@
+<!DOCTYPE html>`
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise In JavaScript</title>
+</head>
+<body>
+    <p>JS IS SINGLE THREAD ( IT EXECUTES SINGLE THING AT A TIME).
+        IN CASE WHERE API REQUEST FROM FRONTENT GOES TO BACKEND REQUESTING SOME DATA IF IT TAKES 2 SEC OF TIME WE CAN'T KEEP BROWSER WEB PAGE FREEZE TILL THEN.
+
+        PROMISE IN JS IS OBJECT REPRESENTING OF EVENTUAL COMPLETION OR FAILURE OF ASYNCHRONOUS OPERATION.
+
+        A PROMISE CAN BE IN 3 STATES:
+        1.FULFILLED: OPERATION SUCCEEDED.
+        2.PENDING: OPERATION ONGOING.
+        3.REJECTED: OPERATION FAILED.
+
+        PROMISE IS HELPFUL FOR AVOIDING CRASHING OF WEB PAGES BY INTEGRATING IT WITH TRY,CATCH AND FINNALLY(ERROR HANDLING).
+
+    </p>
+
+    <script>
+        // 1. Fetch live GitHub API endpoint
+        fetch('https://api.github.com/users/iamkrish-0708')
+            // First .then(): Convert HTTP response to JSON format
+            .then(response => response.json())
+
+            // Second .then(): Use Object Destructuring to extract properties & log clean string
+            .then(data => {
+                const { login, public_repos, followers, location } = data;
+                console.log(`User: ${login} | Public Repos: ${public_repos} | Followers: ${followers} | Location: ${location}`);
+            })
+
+            // .catch(): Handle any network or parsing errors
+            .catch(error => {
+                console.log("Failed to fetch user:", error);
+            });
+
+            /*
+                THE .then() CHAIN IS NOT PREFERRED IN REAL REACT APPS AS IT COULD BE PROBLEM IF OUR MAIN OBJECTIVE IS TO WRITE A ASYNCHRONOUS CODE.
+
+                SYNCHRONOUS CODE - HERE , USER SENDS A REQUEST VIA API TO BACKEND TILL THE API REQUEST RESPONSE REACHES TO USER , THE USER WEB PAGE IS FROZEN ANY OTHER TASK CAN'T BE DONE.
+
+                ASYNCHRONOUS CODE - HERE , USER SNED A REQUEST VIA API TO BACKEND TILL THE API REQUEST RESPONSE REACHES TO USER THE WEB PAGE IS NOT FROZEN AND USER CAN PERFORM OTHER TASKS TOO.
+
+                THE MAIN PROBLEM WITH .then() CHAIN OR PROMISE CHAINING IS NESTED CALLBACK CLUTTER (EVERY TASK DEPENDS ON COMPLETION OF PREVIOUS TASK)
+            */
+    </script>
+ </body>
+</html>

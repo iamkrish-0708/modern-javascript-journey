@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP REQUEST ERROR & response.ok/response.status</title>
+</head>
+<body>
+    <p>
+        when we fetch inside async function and if the request lead to non existent thing so fetch return promise fulfilled instead direct jump execution onto catch block.
+        hence fetch fails to detect the http errors like 404 not found.
+        solution to this we use response.ok which is true for status codes 200-299, and false for 404, 500, etc.
+        response.status is used to determine HTTP status code number like 404 ,200 , 401 , etc.
+        so in real react application without this our program can destructure objects/arrays of non existent thing.
+    </p>
+    <script>
+        async function searchGithubUser(username) {
+            try {
+                const response = await fetch(`https://api.github.com/users/${username}`);
+
+                if (!response.ok) {
+                    throw new Error(`User not found (HTTP Status: ${response.status})`);
+                }
+
+                const data = await response.json();
+                const { login, name, bio, public_repos } = data;
+                console.log(`Found: ${login} (${name ?? "No Name"}) | Repos: ${public_repos} | Bio: ${bio ?? "No Bio"}.`);
+            } catch (error) {
+                console.log(`Error Caught: ${error.message}`);
+            }
+        }
+
+        // Test with a valid user
+        searchGithubUser("iamkrish-0708");
+
+        // Test with a non-existent user to verify HTTP 404 error handling
+        searchGithubUser("this-user-definitely-does-not-exist-123456");
+    </script>
+</body>
+</html>
